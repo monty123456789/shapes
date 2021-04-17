@@ -1,6 +1,6 @@
 void setup() {
   background(0);
-  size(1920,1080, P3D);
+  size(720,480, P3D);
 }
 float x = 0.0;
 int i = 1;
@@ -9,28 +9,27 @@ int i = 1;
 void draw() {
   stroke(255);
   noFill();
-  camera(width/2, 775, height/2 / tan(PI/6), width/2, height/2, 0, 0, 1, 0);
+  camera(width/2, height/2, height/2 / tan(PI/6), width/2, height/2, 0, 0, 1, 0);
 
   //translate(width/2,height/2);
      background(0);
  
 
 
-  for(i = 1; i < width; i= i+5) {
+  for(i = 1; i < width; i= i+3) {
         //background(0);
   lights();
   pushMatrix();
-    translate(width/2,height/2,i);
-    strokeWeight(5);
+    translate(width/2,height/2, i);
+    //strokeWeight(5);
   scale(x);
-  print(mouseX + "x    " + mouseY + "y    ");
 
 
 
         float d = dist(0,0, i, i);
         print(mouseX + "    ");
         float c = map(d, 0, width, 255, 0);
-        stroke(c, 0, 255-c); 
+        stroke(c, 0, 255-c);
         noFill();
         x += .00001;
         //square(0,0,x);
@@ -46,8 +45,7 @@ void draw() {
 
         //square(0,0,d);
 
-     popMatrix();   
+     popMatrix();  
+       
   }
-      saveFrame();    
-
 }
