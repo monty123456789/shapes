@@ -1,6 +1,6 @@
 void setup() {
   background(0);
-  size(720,480, P3D);
+  size(720,440, P3D);
 }
 float x = 0.0;
 int i = 1;
@@ -20,9 +20,9 @@ void draw() {
         //background(0);
   lights();
   pushMatrix();
-    translate(width/2,height/2, i);
+    translate(width/2,height/2);
     //strokeWeight(5);
-  scale(x);
+  scale(.25);
 
 
 
@@ -31,19 +31,21 @@ void draw() {
         float c = map(d, 0, width, 255, 0);
         stroke(c, 0, 255-c);
         noFill();
-        x += .00001;
-        //square(0,0,x);
+        x += 1;
         //REMOVE RADIANS FOR DIFFERENT RESULTS
-        //rotate(x/i/1);
+        //rotate((radians(x/i/10)));
+              //  square(i,i,i);
+
    // background(0);
         //CHANGE 0 TO i FOR DIFFERENT RESULTS
-        circle(0,0,d);
+      strokeWeight(10);
+        //circle(i,i,i);
+         rotate(radians(x/i/10));
 
-        circle(0,i,d);
-        rotate(radians(x/i/10));
+       // circle(0,i,d);
 
 
-        //square(0,0,d);
+        square(i,0,i);
 
      popMatrix();  
        
